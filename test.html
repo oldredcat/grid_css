@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body {
+        padding: 0 15px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    main {
+        padding: 15px 0;
+    }
+
+    div {
+        position: relative;
+    }
+
+    .wrapper {
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        background: #C0DBD9;
+        padding-bottom: 115px;
+    }
+
+    .d-flex {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        background: #7FAFF6;
+    }
+
+    .d-grid {
+        display: grid;
+    }
+
+    .boxes-1 {
+        grid-auto-rows: 200px;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .boxes-1 div {
+        color: #fff;
+        background: #8AD191;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .boxes-2 {
+        /*grid-auto-rows: 200px;*/
+        grid-template-columns: repeat(4, auto);
+        column-gap: 15px;
+        row-gap: 15px;
+        padding: 15px;
+    }
+
+    .boxes-2 div {
+        color: #fff;
+        background: #0D89B0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1.275 / 1;
+    }
+
+    .box-1 {
+        grid-column: 1 / 5;
+    }
+
+    .box-2 {
+        grid-column: 5 / 11;
+    }
+
+    .box-3 {
+        grid-column: 11 / 13;
+    }
+
+    .box-4 {
+        grid-column: 1 / 11;
+    }
+
+    .box-5 {
+        grid-column: 11 / 13;
+    }
+
+    #popup {
+        display: none;
+    }
+
+    #popup:checked + .popup {
+        display: flex;
+    }
+
+    .popup {
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    .popup-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        background: #fff;
+        font-size: 53px;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    label.white {
+        width: 200px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #A5C7F9;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    label.blue {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background: #7FAFF6;
+        color: white;
+        font-size: 20px;
+    }
+
+    header {
+        padding: 0 30px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header class="d-flex">
+        <label for="popup" class="white">Open pop-up button</label>
+    </header>
+
+    <main>
+
+        <div class="d-grid boxes-1">
+            <div class="box-1">1</div>
+            <div class="box-2">2</div>
+            <div class="box-3">3</div>
+            <div class="box-4">4</div>
+            <div class="box-5">5</div>
+        </div>
+
+        <div class="d-grid boxes-2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+
+    <footer class="d-flex"></footer>
+
+</div>
+
+<input type="checkbox" id="popup">
+<div class="popup">
+    <div class="popup-content">
+        <label for="popup" class="blue">x</label>
+        Pop-up
+    </div>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</body>
+</html>
